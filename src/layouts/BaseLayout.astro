@@ -1,0 +1,27 @@
+---
+import "../styles/global.css"; // Add this line to import global styles
+import TopContent from "../components/TopContent.astro";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body class="front">
+    <div id="main">
+      <TopContent />
+      <main>
+        <slot />
+        {/* This is where the content of your pages will go */}
+      </main>
+
+      <footer>
+        <p>&copy; 2014-2025 Le-Daffodils Playschool</p>
+      </footer>
+    </div>
+  </body>
+</html>

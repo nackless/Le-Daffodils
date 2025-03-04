@@ -1,0 +1,243 @@
+---
+// src/components/Header.astro
+import bgMain from "../assets/images/bg-main.jpg";
+// import paginationImage from '../assets/images/pagination.png';
+import { Image } from "astro:assets";
+import ImageCarousel from "../components/ImageCarousel.jsx";
+import "../styles/global.css"; // Add this line to import global styles
+---
+
+<div class="top-wrapper">
+  <div class="top_bg">
+    <Image src={bgMain} alt="Header Background" class="header-background" />
+  </div>
+  <div class="top_content">
+    <div class="container">
+      <header>
+        <div class="logo-wrapper">
+          {/* Container for title and nav */}
+          <a href="/" class="logo"
+            ><h1 class="school-title img-responsive">
+              Le-Daffodils Playschool
+            </h1></a
+          >
+        </div>
+        {/* Add the Image component */}
+      </header>
+      <div class="menu_wrapper">
+        <div class="navbar navbar_ navbar-default">
+          <!-- <button>need to work out</button> -->
+          <div class="navbar-collapse navbar-collapse_ collapse">
+            <ul class="nav navbar-nav sf-menu clearfix sf-js-enabled">
+              <li class="nav1 active"><a href="/" >Home</a></li>
+              <li class="nav2"><a href="/about">About</a></li>
+              <li class="nav3"><a href="/blog">Blog</a></li>
+              <li class="nav4">
+                <a href="/contact">Contact</a>
+              </li>
+              <li class="nav5">
+                <a href="/parent-zone">Parent Zone</a
+                >
+              </li>
+              {/* New Link */}
+              <li class="nav6">
+                <a href="/gallery" class="nav-link gallery-link">Gallery</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="slider_wrapper">
+        <ImageCarousel client:load />
+        <!-- <div id="slider">
+          <div id="flexslider">
+            <ul class="slides clearfix">
+              <li
+                class="flex-active-slide"
+                style="width: 100%; float: left; margin-right: -100%; position: relative; display: none;"
+              >
+                <img src="/images/slide01.jpg" alt="" />
+                <div class="flex-caption">
+                  <div class="flex-caption_inner container">
+                    <div class="txt1">
+                      "education applied."
+                      <br />
+                      "quality assured."
+                    </div>
+                    <div class="txt2">
+                      "Lorem ipsum dolor sit amet."
+                      <br />
+                      "Lorem ipsum dolor sit amet."
+                      <br />
+                      "elementum st."
+                    </div>
+                    <div class="txt3">
+                      <a href="" class="btn-default btn0">contact us today.</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class=""
+                style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;"
+              >
+                <img src="/images/slide02.jpg" alt="" />
+                <div class="flex-caption">
+                  <div class="flex-caption_inner container"></div>
+                  <div class="txt1">
+                    "Play & learn."
+                    <br />
+                    "Games in teaching."
+                  </div>
+                  <div class="txt2">
+                    "donec iscasl solig"
+                    <br />
+                    "elementum leviosa estow"
+                    <br />
+                    "nakaru kiko."
+                  </div>
+                  <div class="txt3">
+                    <a href="" class="btn-default btn0">contact us today</a>
+                  </div>
+                </div>
+              </li>
+              <li
+                class=""
+                style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;"
+              >
+                <img src="/images/slide03.jpg" alt="" />
+                <div class="flex-caption">
+                  <div class="flex-caption_inner container">
+                    <div class="txt1">
+                      "education"
+                      <br />
+                      "and care."
+                    </div>
+                    <div class="txt2">
+                      "donec iscasl solig"
+                      <br />
+                      "elementum leviosa estow"
+                      <br />
+                      "nakaru kiko."
+                    </div>
+                    <div class="txt3">
+                      <a href="" class="btn-default btn0">contact us today</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ol class="flex-control-nav flex-control-paging">
+              <li><a href="" class="flex-active">1</a></li>
+              <li><a href="" class="">2</a></li>
+              <li><a href="" class="">3</a></li>
+            </ol>
+            <ul class="flex-direction-nav">
+              <li class="flex-prev"><a href="" class="flex-prev"></a></li>
+              <li class="flex-next"><a href="" class="flex-next"></a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  header {
+    padding-top: 40px;
+    padding-bottom: 45px;
+    text-align: center;
+    display: block;
+  }
+
+  .header-background {
+    width: 100%;
+    display: block;
+  }
+
+  .logo {
+    display: inline-block;
+  }
+
+  Image {
+    vertical-align: middle;
+    border: 0;
+    display: block
+    max-width: 100%;
+    height: auto;
+  }
+
+  #slider_wrapper {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+/* #slider {
+    margin: 0;
+    position: relative;
+  }
+
+  #flexslider {
+    position: relative;
+    min-height: 530px;
+  }
+
+  .slides {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #flexslider .slides > li {
+    display: none;
+    position: relative;
+  }
+
+  .slides img {
+    width: 100%;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+  }
+
+  .flex-caption {
+    position: absolute;
+    width: auto;
+    left: 8%;
+    top: 50%;
+    margin-top: -110px;
+    text-align: left;
+  }
+
+  #flexslider .flex-control-nav {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    left: 3%;
+    bottom: 4%;
+    z-index: 5;
+    overflow: hidden;
+    list-style: none;
+    text-align: left;
+    line-height: 1;
+  }
+
+  #flexslider .flex-control-nav li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background: url({paginationImage.src}); */
+    text-indent: -9999%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  } */
+
+</style>

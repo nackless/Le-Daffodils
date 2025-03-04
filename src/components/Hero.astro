@@ -1,0 +1,83 @@
+---
+const { title, subtitle, image } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-content">
+    {/* Container for content */}
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+    <img src={image} alt={title} class="hero-image rounded-corners shadow" />
+    {/* Hero Image */}
+    <button class="cta-button">Enroll Now</button>
+    {/* Call to action button */}
+  </div>
+</section>
+
+<style>
+  /* src/components/Hero.astro or src/styles/global.css */
+  .hero {
+    background-color: #e0f2f7; /* Light blue background */
+    padding: 6rem 0; /* Increased padding */
+    text-align: center;
+    position: relative; /* For positioning the content */
+    overflow: hidden; /* Hide overflowing elements */
+  }
+
+  .hero-content {
+    max-width: 900px; /* Adjust as needed */
+    margin: 0 auto;
+    position: relative; /* So content is above the image */
+    z-index: 1; /* Ensure content is on top */
+  }
+
+  .hero h2 {
+    color: var(--primary-color);
+    font-size: 3rem; /* Adjust as needed */
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-image {
+    max-width: 100%; /* Ensure image fits the container */
+    height: auto;
+    display: block; /* Prevent image from affecting layout */
+    margin: 2rem auto; /* Center the image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    object-fit: cover; /* or contain, depending on how you want the image to fit */
+  }
+
+  .cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #d47e00; /* Darker shade */
+  }
+
+  /* Responsive Styles (Example) */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 0;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+    }
+  }
+</style>

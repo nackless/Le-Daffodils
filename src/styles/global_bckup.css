@@ -1,0 +1,57 @@
+/* Color Palette */
+:root {
+
+    /* Define variables in the :root pseudo-class for global scope */
+    --header-background-image: url('/images/your-header-background.jpg'); /* Path to your image */
+    --header-text-color: white; /* Or any other color */
+    --background-color: #f0f0f0; /* Example background color */
+    --header-title-color: #333; /* Example title color */
+    --header-nav-color: #555; /* Example nav link color */
+    --header-nav-hover-background: #eee; /* Example hover background */
+    --header-nav-hover-color: #333; /* Example hover color */
+    
+    --primary-color: #2196F3; /* Example blue */
+    --secondary-color: #FFEB3B; /* Example yellow */
+    --accent-color: #FF9800; /* Example orange */
+    --background-color: #f5f5f5;
+    --text-color: #333; /* Dark gray text */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Example body font */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Bubblegum Sans', cursive; /* Example heading font */
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.rounded-corners {
+    border-radius: 10px;
+}
+
+.shadow {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* ... other global styles */

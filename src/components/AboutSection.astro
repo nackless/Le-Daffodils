@@ -1,0 +1,15 @@
+---
+const { title, children } = Astro.props; // children will be the content inside the tag
+---
+
+<section class="about">
+  <h2>{title}</h2>
+  {children}
+  <slot />
+</section>
+
+<style>
+  .about {
+    /* Add your CSS styles here */
+  }
+</style>
